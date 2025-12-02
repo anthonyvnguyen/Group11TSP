@@ -21,7 +21,8 @@ def euclidean_distance(coord1, coord2):
     """
     x1, y1 = coord1
     x2, y2 = coord2
-    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    return round(distance)
 
 
 def calculate_tour_distance(tour, coordinates):

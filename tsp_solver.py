@@ -49,23 +49,23 @@ def write_solution_file(instance_name, method, cutoff_time, seed, best_tour, bes
     # Generate filename based on method requirements
     if method == 'BF':
         # For BF, random seed can be omitted
-        filename = f"{instance_lower} {method} {int(cutoff_time)}.sol"
+        filename = f"{instance_lower}_{method}_{int(cutoff_time)}.sol"
     elif method == 'Approx':
         # For approximation algorithm, cutoff can be omitted
         if seed is not None:
-            filename = f"{instance_lower} {method} {seed}.sol"
+            filename = f"{instance_lower}_{method}_{seed}.sol"
         else:
-            filename = f"{instance_lower} {method}.sol"
+            filename = f"{instance_lower}_{method}.sol"
     elif method == 'LS':
         # For LS, both cutoff and seed are required
         if seed is None:
             raise ValueError("Seed is required for LS method")
-        filename = f"{instance_lower} {method} {int(cutoff_time)} {seed}.sol"
+        filename = f"{instance_lower}_{method}_{int(cutoff_time)}_{seed}.sol"
     else:
         # Default fallback
-        filename = f"{instance_lower} {method} {int(cutoff_time)}.sol"
+        filename = f"{instance_lower}_{method}_{int(cutoff_time)}.sol"
         if seed is not None:
-            filename = f"{instance_lower} {method} {int(cutoff_time)} {seed}.sol"
+            filename = f"{instance_lower}_{method}_{int(cutoff_time)}_{seed}.sol"
     
     with open(filename, 'w') as f:
         # Line 1: Best solution quality (floating point)
