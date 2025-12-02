@@ -39,8 +39,8 @@ def solve_tsp(coordinates, cutoff_time):
     
     total_permutations = math.factorial(len(remaining_vertices))
     checked = 0
-    # Check time every 10000 iterations for efficiency, but always check on first iteration
-    check_interval = 10000
+    # Check time every 1000 iterations for efficiency, but always check on first iteration
+    check_interval = 1000
     
     print(f"Total permutations to check: {total_permutations:,}")
     if total_permutations > 1000000:
