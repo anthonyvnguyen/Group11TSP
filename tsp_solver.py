@@ -143,7 +143,7 @@ def main():
         print(f"Tour: {tour_preview} -> {best_tour[0]}")
         
         # Write solution file
-        write_solution_file(instance_name, args.alg, args.time, args.seed, 
+        write_solution_file(args.inst, args.alg, args.time, args.seed, 
                           best_tour, best_distance)
         
     except Exception as e:
